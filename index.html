@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDA — Espaço de Desenvolvimento e Aprendizagem | Psicopedagogia em Valinhos e Campinas</title>
+  <meta name="description" content="Psicopedagogia clínica e reforço escolar em Valinhos e Campinas. Márcia Andrino, 40+ anos de experiência. Seu filho pode aprender — com o suporte certo." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://edaespacodedesenvolvimentoeaprendizagem.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EDA — Espaço de Desenvolvimento e Aprendizagem" />
+  <meta property="og:description" content="Psicopedagogia clínica e reforço escolar em Valinhos e Campinas. Seu filho pode aprender — com o suporte certo." />
+  <meta property="og:image" content="foto site.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand:    #4d9e90;
+      --brand-dk: #3d7e72;
+      --brand-lt: #edf7f5;
+      --accent:   #25d366;
+      --accent-dk:#1ebe5d;
+      --text:     #1a2e2b;
+      --muted:    #6b7280;
+      --border:   #e5e7eb;
+      --bg:       #ffffff;
+      --surface:  #f9f8ff;
+      --radius:   12px;
+      --max:      1100px;
+    }
+
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max); margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .logo img { height: 46px; width: auto; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav ul a { font-size: .88rem; font-weight: 500; color: var(--muted); transition: color .2s; }
+    nav ul a:hover { color: var(--brand); }
+    .nav-cta {
+      background: var(--brand); color: #fff;
+      padding: .5rem 1.2rem; border-radius: 8px;
+      font-size: .88rem; font-weight: 700;
+      white-space: nowrap;
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: var(--brand-dk); transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, #1d5c52 0%, #4d9e90 60%, #7dc5ba 100%);
+      color: #fff; padding: 5rem 1.5rem 4.5rem;
+      overflow: hidden; position: relative;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,.07) 0%, transparent 70%);
+    }
+    .hero-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 400px; gap: 4rem; align-items: center;
+      position: relative;
+    }
+    .hero-badges { display: flex; gap: .75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .badge {
+      display: flex; align-items: center; gap: .4rem;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+      padding: .3rem .85rem; border-radius: 20px;
+      font-size: .78rem; font-weight: 600;
+    }
+    .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; flex-shrink: 0; }
+    .hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; line-height: 1.18;
+      margin-bottom: 1.25rem; letter-spacing: -.5px;
+    }
+    .hero h1 em { font-style: normal; color: #fbbf24; }
+    .hero p { font-size: 1.1rem; opacity: .88; max-width: 500px; margin-bottom: 2.25rem; line-height: 1.65; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .85rem 1.8rem; border-radius: var(--radius);
+      font-size: .95rem; font-weight: 700; cursor: pointer;
+      transition: transform .15s, box-shadow .15s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+    .btn-green { background: var(--accent); color: #fff; }
+    .btn-green:hover { background: var(--accent-dk); }
+    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5); }
+    .btn-outline:hover { background: rgba(255,255,255,.1); }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-4px); }
+    }
+
+    .hero-photo {
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,.4);
+      aspect-ratio: 3/4; background: rgba(255,255,255,.05);
+    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+    .form-item { animation: float 4s ease-in-out infinite; }
+    .form-item:nth-child(2) { animation-delay: .5s; }
+    .form-item:nth-child(3) { animation-delay: 1s; }
+    .form-item:nth-child(4) { animation-delay: 1.5s; }
+
+    .svc-card { animation: float 4s ease-in-out infinite; }
+    .svc-card:nth-child(2) { animation-delay: .3s; }
+    .svc-card:nth-child(3) { animation-delay: .6s; }
+    .svc-card:nth-child(4) { animation-delay: .9s; }
+    .svc-card:nth-child(5) { animation-delay: 1.2s; }
+    .svc-card:nth-child(6) { animation-delay: 1.5s; }
+    .svc-card:nth-child(7) { animation-delay: 1.8s; }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 5rem 1.5rem; }
+    .container { max-width: var(--max); margin: 0 auto; }
+    .section-label {
+      display: inline-block;
+      background: var(--brand-lt); color: var(--brand);
+      padding: .25rem .85rem; border-radius: 20px;
+      font-size: .75rem; font-weight: 700; letter-spacing: .6px;
+      text-transform: uppercase; margin-bottom: 1rem;
+    }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; line-height: 1.22; margin-bottom: 1rem; }
+    .lead { font-size: 1.05rem; color: var(--muted); max-width: 620px; }
+
+    /* ─── STATS ─── */
+    .stats-band {
+      background: var(--brand); color: #fff;
+      padding: 3rem 1.5rem;
+    }
+    .stats-grid {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center;
+    }
+    .stat-item strong { display: block; font-size: 2.5rem; font-weight: 800; }
+    .stat-item span { font-size: .9rem; opacity: .8; }
+
+    /* ─── SOBRE ─── */
+    .sobre { background: var(--surface); }
+    .sobre-grid {
+      display: grid; grid-template-columns: 380px 1fr; gap: 4rem; align-items: center; margin-top: 3rem;
+    }
+    .sobre-foto { border-radius: 20px; overflow: hidden; box-shadow: 0 16px 48px rgba(108,63,197,.2); }
+    .sobre-foto img { width: 100%; }
+    .sobre-info { display: flex; flex-direction: column; gap: 1.25rem; }
+    .sobre-tag {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--brand-lt); color: var(--brand);
+      padding: .4rem .9rem; border-radius: 8px;
+      font-size: .85rem; font-weight: 600; align-self: flex-start;
+    }
+    .formacao { display: flex; flex-direction: column; gap: .75rem; margin-top: .5rem; }
+    .form-item {
+      display: flex; gap: .75rem; align-items: flex-start;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: .9rem 1.1rem;
+    }
+    .form-item .icon { font-size: 1.2rem; flex-shrink: 0; }
+    .form-item p { font-size: .9rem; color: var(--text); }
+    .form-item span { display: block; font-size: .78rem; color: var(--muted); }
+
+    /* ─── SERVIÇOS ─── */
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .svc-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.8rem;
+      transition: box-shadow .2s, border-color .2s;
+    }
+    .svc-card:hover { box-shadow: 0 8px 28px rgba(108,63,197,.12); border-color: var(--brand); }
+    .svc-card .icon { font-size: 1.8rem; margin-bottom: .9rem; }
+    .svc-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; }
+    .svc-card p { font-size: .9rem; color: var(--muted); }
+
+    /* ─── REFORÇO ─── */
+    .reforco { background: var(--surface); }
+    .reforco-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 3rem;
+    }
+    .reforco-list { display: flex; flex-direction: column; gap: .75rem; }
+    .reforco-item {
+      display: flex; gap: .75rem; align-items: center;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: .9rem 1.1rem;
+      font-size: .95rem; font-weight: 500;
+    }
+    .reforco-item .icon { font-size: 1.2rem; }
+    .reforco-box {
+      background: linear-gradient(135deg, var(--brand), #7dc5ba);
+      border-radius: 20px; padding: 2.5rem; color: #fff; text-align: center;
+    }
+    .reforco-box h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem; }
+    .reforco-box p { opacity: .88; margin-bottom: 1.5rem; }
+
+    /* ─── PARA QUEM ─── */
+    .para-quem-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .pq-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem; text-align: center;
+      transition: box-shadow .2s;
+    }
+    .pq-card:hover { box-shadow: 0 8px 28px rgba(108,63,197,.1); }
+    .pq-card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .pq-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
+    .pq-card p { font-size: .88rem; color: var(--muted); }
+
+    /* ─── ARTIGOS ─── */
+    .artigos { background: var(--surface); }
+    .articles-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .article-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.8rem;
+      display: flex; flex-direction: column; gap: .75rem;
+      transition: box-shadow .2s, transform .15s;
+    }
+    .article-card:hover { box-shadow: 0 8px 28px rgba(108,63,197,.12); transform: translateY(-2px); }
+    .article-cat {
+      display: inline-block;
+      background: var(--brand-lt); color: var(--brand);
+      font-size: .72rem; font-weight: 700; padding: .2rem .75rem;
+      border-radius: 20px; letter-spacing: .4px; text-transform: uppercase;
+      align-self: flex-start;
+    }
+    .article-card h3 { font-size: .98rem; font-weight: 700; line-height: 1.4; }
+    .article-card p { font-size: .88rem; color: var(--muted); flex: 1; }
+    .article-meta {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: .8rem; color: var(--muted);
+      border-top: 1px solid var(--border); padding-top: .75rem;
+    }
+    .article-read { color: var(--brand); font-weight: 600; }
+
+    /* ─── CTA BAND ─── */
+    .cta-band {
+      background: linear-gradient(135deg, #1d5c52, #4d9e90);
+      color: #fff; text-align: center; padding: 5rem 1.5rem;
+    }
+    .cta-band h2 { color: #fff; margin-bottom: 1rem; }
+    .cta-band p { opacity: .85; max-width: 540px; margin: 0 auto 2.5rem; font-size: 1.05rem; }
+    .cta-note { margin-top: 1rem; font-size: .85rem; opacity: .6; }
+
+    /* ─── FOOTER ─── */
+    footer { background: #0d0a1a; color: #9ca3af; padding: 3rem 1.5rem 2rem; }
+    .footer-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem;
+    }
+    .footer-logo { height: 48px; width: auto; filter: brightness(0) invert(1); margin-bottom: .75rem; }
+    .footer-brand p { font-size: .88rem; margin-top: .75rem; line-height: 1.6; }
+    footer h4 { color: #fff; font-size: .88rem; font-weight: 700; margin-bottom: 1rem; }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    footer ul li { font-size: .85rem; }
+    footer ul a { color: #9ca3af; transition: color .2s; }
+    footer ul a:hover { color: #fff; }
+    .footer-divider {
+      max-width: var(--max); margin: 2rem auto 0;
+      border-top: 1px solid #1f1535;
+      padding-top: 1.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: .5rem; font-size: .8rem;
+    }
+    .footer-divider a { color: #6b7280; }
+    .footer-divider a:hover { color: #fff; }
+
+    /* ─── WHATSAPP FLOAT ─── */
+    .wa-float {
+      position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 200;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.55); }
+    .wa-float svg { width: 30px; height: 30px; fill: #fff; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-photo { display: none; }
+      .sobre-grid { grid-template-columns: 1fr; }
+      .reforco-grid { grid-template-columns: 1fr; }
+      .para-quem-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      nav ul { display: none; }
+      .footer-divider { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 3.5rem 1rem; }
+      .hero { padding: 3.5rem 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="eda logo transpa.png" alt="EDA — Espaço de Desenvolvimento e Aprendizagem" />
+    </a>
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#reforco">Reforço Escolar</a></li>
+      <li><a href="#artigos">Artigos</a></li>
+    </ul>
+    <a href="https://wa.me/5511941329744?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20EDA." class="nav-cta" target="_blank" rel="noopener">Agendar conversa</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badges">
+        <span class="badge"><span class="badge-dot"></span> 40+ anos de experiência</span>
+        <span class="badge"><span class="badge-dot"></span> Valinhos e Campinas</span>
+      </div>
+      <h1>Seu filho pode aprender — <em>com o suporte certo.</em></h1>
+      <p>Psicopedagogia clínica e reforço escolar com atendimento individualizado. Cada criança tem seu próprio ritmo — e eu estou aqui para encontrá-lo.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/5511941329744?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20conversa%20sobre%20os%20servi%C3%A7os%20da%20EDA." class="btn btn-green" target="_blank" rel="noopener">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar pelo WhatsApp
+        </a>
+        <a href="#servicos" class="btn btn-outline">Ver serviços</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="foto site.png" alt="Márcia Andrino — Psicopedagoga" loading="eager" />
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stats-grid">
+    <div class="stat-item"><strong>40+</strong><span>Anos na educação</span></div>
+    <div class="stat-item"><strong>7</strong><span>Serviços especializados</span></div>
+    <div class="stat-item"><strong>3</strong><span>Pós-graduações</span></div>
+    <div class="stat-item"><strong>100%</strong><span>Atendimento individualizado</span></div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="container">
+    <span class="section-label">Quem sou eu</span>
+    <h2>Márcia Andrino — Psicopedagoga</h2>
+    <p class="lead">Mais de 40 anos dedicados à educação, com formação sólida e atendimento personalizado para cada criança, adolescente e adulto.</p>
+    <div class="sobre-grid">
+      <div class="sobre-foto">
+        <img src="foto site.png" alt="Márcia Andrino — Psicopedagoga" />
+      </div>
+      <div class="sobre-info">
+        <span class="sobre-tag">🎓 Psicopedagoga Clínica e Institucional</span>
+        <p style="color:var(--muted);font-size:.98rem;">Formada em Pedagogia pela UNICAMP em 1985, com especialização em Alfabetização e EJA pela PUC Rio e três pós-graduações pela FAMEESP (2024). Participou do Jornal Record News e do Congresso CAEM 2020.</p>
+        <div class="formacao">
+          <div class="form-item">
+            <div class="icon">🏛️</div>
+            <div><p><strong>Pedagogia — UNICAMP</strong><span>Formação, 1985</span></p></div>
+          </div>
+          <div class="form-item">
+            <div class="icon">📚</div>
+            <div><p><strong>Psicopedagogia Clínica e Institucional</strong><span>Pós-graduação FAMEESP, 2024</span></p></div>
+          </div>
+          <div class="form-item">
+            <div class="icon">🔬</div>
+            <div><p><strong>Avaliações Psicológicas em Educação</strong><span>Pós-graduação FAMEESP, 2024</span></p></div>
+          </div>
+          <div class="form-item">
+            <div class="icon">✏️</div>
+            <div><p><strong>Alfabetização e EJA</strong><span>Especialização PUC Rio</span></p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="container">
+    <span class="section-label">O que oferecemos</span>
+    <h2>Serviços especializados</h2>
+    <p class="lead">Atendimento psicopedagógico completo, do diagnóstico ao acompanhamento contínuo.</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="icon">🔍</div>
+        <h3>Avaliação Psicopedagógica</h3>
+        <p>Diagnóstico completo das dificuldades de aprendizagem para entender o perfil único de cada estudante.</p>
+      </div>
+      <div class="svc-card">
+        <div class="icon">🧠</div>
+        <h3>Terapia Psicopedagógica</h3>
+        <p>Acompanhamento terapêutico focado no desenvolvimento das habilidades de aprendizagem.</p>
+      </div>
+      <div class="svc-card">
+        <div class="icon">📖</div>
+        <h3>Apoio à Aprendizagem</h3>
+        <p>Suporte direto para superar dificuldades escolares com estratégias personalizadas.</p>
+      </div>
+      <div class="svc-card">
+        <div class="icon">🤝</div>
+        <h3>Habilidades Sociais</h3>
+        <p>Desenvolvimento de competências sociais e emocionais para melhor convivência e aprendizado.</p>
+      </div>
+      <div class="svc-card">
+        <div class="icon">💙</div>
+        <h3>Apoio Emocional</h3>
+        <p>Suporte emocional para crianças e adolescentes que enfrentam desafios no ambiente escolar.</p>
+      </div>
+      <div class="svc-card">
+        <div class="icon">👨‍👩‍👧</div>
+        <h3>Orientação para Pais e Educadores</h3>
+        <p>Orientação prática para que pais e professores possam apoiar melhor o desenvolvimento da criança.</p>
+      </div>
+      <div class="svc-card">
+        <div class="icon">📋</div>
+        <h3>Planos de Ação Individualizados</h3>
+        <p>Criação de estratégias personalizadas alinhadas às necessidades e potencialidades de cada aluno.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFORÇO ESCOLAR -->
+<section class="reforco" id="reforco">
+  <div class="container">
+    <span class="section-label">Reforço Escolar</span>
+    <h2>Suporte escolar completo</h2>
+    <p class="lead">Da Educação Infantil à preparação para o Vestibular, com tutoria individualizada ou em pequenos grupos.</p>
+    <div class="reforco-grid">
+      <div class="reforco-list">
+        <div class="reforco-item"><span class="icon">📐</span> Todas as disciplinas</div>
+        <div class="reforco-item"><span class="icon">👤</span> Tutoria 1:1 e pequenos grupos</div>
+        <div class="reforco-item"><span class="icon">📊</span> Acompanhamento contínuo</div>
+        <div class="reforco-item"><span class="icon">🎒</span> Educação Infantil ao Ensino Médio</div>
+        <div class="reforco-item"><span class="icon">🎯</span> Preparação para Vestibular</div>
+        <div class="reforco-item"><span class="icon">📝</span> Plano de estudo personalizado</div>
+      </div>
+      <div class="reforco-box">
+        <h3>Quer saber se o reforço é a opção certa para seu filho?</h3>
+        <p>Agende uma conversa gratuita e entendo a situação atual antes de qualquer recomendação.</p>
+        <a href="https://wa.me/5511941329744?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20refor%C3%A7o%20escolar%20da%20EDA." class="btn btn-green" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section id="para-quem">
+  <div class="container">
+    <span class="section-label">Para quem é</span>
+    <h2>Atendo com carinho e dedicação</h2>
+    <p class="lead">Cada pessoa tem uma história e um ritmo próprio. Meu trabalho é encontrar o caminho certo para cada uma delas.</p>
+    <div class="para-quem-grid">
+      <div class="pq-card">
+        <div class="icon">👶</div>
+        <h3>Crianças</h3>
+        <p>Da Educação Infantil ao Ensino Fundamental, com dificuldades de leitura, escrita, concentração ou comportamento.</p>
+      </div>
+      <div class="pq-card">
+        <div class="icon">🧑</div>
+        <h3>Adolescentes</h3>
+        <p>Suporte para superar dificuldades escolares, preparar para o vestibular e desenvolver autonomia nos estudos.</p>
+      </div>
+      <div class="pq-card">
+        <div class="icon">👨‍👩‍👧</div>
+        <h3>Pais e Educadores</h3>
+        <p>Orientação prática para apoiar o desenvolvimento da criança em casa e na escola, de forma integrada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTIGOS -->
+<section class="artigos" id="artigos">
+  <div class="container">
+    <span class="section-label">Artigos</span>
+    <h2>Conteúdo sobre aprendizagem</h2>
+    <p class="lead">Textos práticos para pais e educadores que querem entender melhor o desenvolvimento infantil.</p>
+    <div class="articles-grid">
+      <a href="artigos/crise-alfabetizacao-brasil.html" class="article-card">
+        <div class="article-cat">Alfabetização</div>
+        <h3>A crise da alfabetização no Brasil</h3>
+        <p>Uma análise sobre os desafios do processo de alfabetização pós-pandemia e o que pais e escolas podem fazer.</p>
+        <div class="article-meta"><span>2026</span><span class="article-read">Ler artigo →</span></div>
+      </a>
+      <a href="artigos/dislexia-dificuldade-leitura.html" class="article-card">
+        <div class="article-cat">Dislexia</div>
+        <h3>Dislexia: muito além da dificuldade de leitura</h3>
+        <p>Como reconhecer, entender e apoiar alunos com dislexia — o que todo pai e professor precisa saber.</p>
+        <div class="article-meta"><span>2026</span><span class="article-read">Ler artigo →</span></div>
+      </a>
+      <a href="artigos/pais-escola-trabalhando-juntos.html" class="article-card">
+        <div class="article-cat">Família & Escola</div>
+        <h3>Como pais e escola podem trabalhar juntos</h3>
+        <p>O papel da parceria família-escola no desenvolvimento saudável e no sucesso escolar da criança.</p>
+        <div class="article-meta"><span>2026</span><span class="article-read">Ler artigo →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band" id="agendar">
+  <div class="container">
+    <h2>Agende uma conversa gratuita</h2>
+    <p>Conte-me sobre seu filho e vamos descobrir juntos qual é o melhor caminho para o desenvolvimento dele. Sem compromisso.</p>
+    <a href="https://wa.me/5511941329744?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20conversa%20sobre%20os%20servi%C3%A7os%20da%20EDA." class="btn btn-green" target="_blank" rel="noopener" style="font-size:1.05rem;padding:1rem 2.4rem;">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar conversa gratuita
+    </a>
+    <p class="cta-note">Seg–Sex, 8h às 18h · Valinhos e Campinas · Atendimento remoto disponível</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="eda logo transpa.png" alt="EDA" class="footer-logo" />
+      <p>Espaço de Desenvolvimento e Aprendizagem — psicopedagogia clínica e reforço escolar em Valinhos e Campinas.</p>
+    </div>
+    <div>
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#reforco">Reforço Escolar</a></li>
+        <li><a href="#artigos">Artigos</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="https://wa.me/5511941329744" target="_blank" rel="noopener">WhatsApp: (11) 94132-9744</a></li>
+        <li><a href="https://instagram.com/marcia_andrino" target="_blank" rel="noopener">Instagram: @marcia_andrino</a></li>
+        <li style="color:#6b7280;">Valinhos · Campinas — SP</li>
+        <li style="color:#6b7280;">Seg–Sex, 8h–18h</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-divider">
+    <span>© 2026 EDA — Espaço de Desenvolvimento e Aprendizagem</span>
+    <span>Desenvolvido por <a href="https://cpmktd.com.br" target="_blank" rel="noopener">C Pires Gestão e Marketing</a></span>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5511941329744?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais." class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+</body>
+</html>
