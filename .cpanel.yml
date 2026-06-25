@@ -1,4 +1,4 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/elgor248/edaespacodedesenvolvimentoeaprendizagem.com/ && /bin/cp -R /home2/elgor248/eda-deploy/* $DEPLOYPATH
+    - export DEPLOYPATH=/home2/elgor248/edaespacodedesenvolvimentoeaprendizagem.com/ && /bin/cp -R /home2/elgor248/eda-deploy/. $DEPLOYPATH
