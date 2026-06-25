@@ -1,4 +1,5 @@
 ---
 deployment:
   tasks:
-      - export DEPLOYPATH=/home2/elgor248/public_html/eda/ && /bin/cp -R /home2/elgor248/eda-deploy/* $DEPLOYPATH
+    - export DEPLOYPATH=/home2/elgor248/edaespacodedesenvolvimentoeaprendizagem.com/
+    - /bin/cp -r $CPANEL_BASE_INSTALL_DIR/. $DEPLOYPATH
