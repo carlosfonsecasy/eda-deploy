@@ -1,0 +1,4 @@
+---
+deployment:
+  tasks:
+      - export DEPLOYPATH=/home2/elgor248/public_html/eda/ && /bin/cp -R /home2/elgor248/eda-deploy/* $DEPLOYPATH
